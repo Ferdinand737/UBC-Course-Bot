@@ -24,4 +24,4 @@
 ## Results
 
 ![sc_2](screenshot_2.PNG)
-![sc_1](screenshot_1.png)
+![sc_1](screenshot_1.PNG)
