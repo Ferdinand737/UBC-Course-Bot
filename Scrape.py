@@ -1,8 +1,10 @@
+from lib2to3.pgen2 import driver
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException  
 import time
 import pandas as pd
+from selenium.webdriver.common.action_chains import ActionChains
 
 def scrape_classes():
 
@@ -103,22 +105,5 @@ def scrape_classes():
                     
     df.to_csv("courses.csv")
 
-def scrape_major_reqs():
-    df = pd.DataFrame(columns=['Campus','Major','First year','Second year','Third year','Fourth year'])
-
-
-
-
-
-    print("Todo!")
-
-               
-input = input("1: Scrape Classes\n2: Scrape majors\n")
-
-if input == '1':
-    scrape_classes()
-elif input == '2':
-    scrape_major_reqs()
-else:
-    print("invalid input")
+scrape_classes()
 

@@ -1,9 +1,3 @@
-#Course Bot Command Ideas
-
-#$feedback
-    #add user feedback to csv
-        #date_time, username, server, comment 
-
 import os
 from discord.ext import commands
 import discord
@@ -15,13 +9,12 @@ import traceback
 
 
 load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
+TOKEN = os.getenv('DISCORD_TOKEN_TESTING')
 intents = discord.Intents.default()
 intents.guild_messages= True
 intents.dm_messages=True
 intents.messages=True
 intents.presences=True
-intents.message_content=True
 bot = commands.Bot(command_prefix='$',help_command=None,intents=intents)
 bot.remove_command('help')
 
