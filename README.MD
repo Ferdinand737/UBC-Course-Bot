@@ -14,7 +14,7 @@
     pip install matplotlib
     ```
 3. Download the correct version of chromedriver for your system [here](https://chromedriver.chromium.org/downloads).
-    * Chromedriver must the the same version as chrome on your device
+    * Chromedriver must be the same version as chrome on your device
     * Linux chromedriver for chrome is included in this repository but may be out of date
 4. Follow [this guide](https://realpython.com/how-to-make-a-discord-bot-python/#how-to-make-a-discord-bot-in-python) to make a discord application and create your .env file.
 5. Run Scrape.py to update the courses.csv file with current courses.
