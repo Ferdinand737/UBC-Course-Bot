@@ -1,20 +1,15 @@
 import os
-from discord.ext import commands
 import discord
+from discord.ext import commands
 from dotenv import load_dotenv
 import networkx as nx
 import pandas as pd
 import matplotlib.pyplot as plt
-import traceback
 
-
+footer_msg = "This bot was created by: JEFF#1778"
 load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN_TESTING')
-intents = discord.Intents.default()
-intents.guild_messages= True
-intents.dm_messages=True
-intents.messages=True
-intents.presences=True
+TOKEN = os.getenv('DISCORD_TOKEN')
+intents = discord.Intents.all()
 bot = commands.Bot(command_prefix='$',help_command=None,intents=intents)
 bot.remove_command('help')
 
@@ -23,7 +18,7 @@ async def help(ctx):
     embed = discord.Embed(title="Help")
     embed.add_field(name="$graph",value="Generates pre-req graph for given course with an optional number of layers.\n\n$graph <campus> <dept> <code> <layers>\n\nExamples:\n>>   $graph UBCO COSC 499 2\n>>  $graph ubc engl 366")
     embed.add_field(name="$csv",value="Sends csv of course data.\n\nExample:\n>>  $csv")
-    embed.set_footer(text="This bot was created by: JEFF#1778")
+    embed.set_footer(text=footer_msg)
     print("help")
     await ctx.send(embed=embed)
 
@@ -48,10 +43,9 @@ async def course_search(ctx,*,content:str):
         G = build_graph(content,df)
     except:
         embed = discord.Embed(title = "Query Error")
-        embed.add_field(name = "Course does not exist\nor\nSyntax is wrong", value ="eg.\n$graph UBCO COSC 499\nor\n$graph ubc engl 366")
-        embed.set_footer(text="This bot was created by: JEFF#1778")
+        embed.add_field(name = "Course does not exist\nor\nSyntax is wrong", value ="do:\n$graph UBCO COSC 499\nor\n$graph ubc engl 366")
+        embed.set_footer(text=footer_msg)
         await ctx.send(embed=embed)
-        traceback.print_exc()
         return
 
                 
@@ -96,7 +90,7 @@ async def course_search(ctx,*,content:str):
         embed.add_field(name = node, value = details)
     
    
-    embed.set_footer(text="This bot was created by: JEFF#1778")
+    embed.set_footer(text=footer_msg)
     print(content)
     await ctx.send(file=img,embed=embed)
 
