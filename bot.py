@@ -6,7 +6,7 @@ import networkx as nx
 import pandas as pd
 import matplotlib.pyplot as plt
 
-footer_msg = "This bot was created by: JEFF#1778 [GitHub](https://github.com/Ferdinand737/UBC-Course-Bot)"
+footer_msg = "This bot was created by: JEFF#1778"
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 intents = discord.Intents.all()
@@ -18,6 +18,7 @@ async def help(ctx):
     embed = discord.Embed(title="Help")
     embed.add_field(name="$graph",value="Generates pre-req graph for given course with an optional number of layers.\n\n$graph <campus> <dept> <code> <layers>\n\nExamples:\n>>   $graph UBCO COSC 499 2\n>>  $graph ubc engl 366")
     embed.add_field(name="$csv",value="Sends csv of course data.\n\nExample:\n>>  $csv")
+    embed.add_field(name = "View Project",value="[GitHub](https://github.com/Ferdinand737/UBC-Course-Bot)")
     embed.set_footer(text=footer_msg)
     print("help")
     await ctx.send(embed=embed)
