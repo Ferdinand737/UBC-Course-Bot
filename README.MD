@@ -1,7 +1,7 @@
 <img src="coursebot_logo.png" style="width:100px;height:100px;"/>
 
 # UBC-Course-Bot
-[Add to your server](https://discord.com/api/oauth2/authorize?client_id=1008396649657278605&permissions=51200&scope=bot)
+[Add this bot to your discord server](https://discord.com/api/oauth2/authorize?client_id=1008396649657278605&permissions=51200&scope=bot)
 ## How to run this code yourself
 1. Install Python [here](https://www.python.org/downloads/).
 2. Install packages, you might need to install pip [here](https://pip.pypa.io/en/stable/installation/)
