@@ -9,7 +9,7 @@
     pip install selenium
     pip install pandas
     pip install discord
-    pip install dotenv
+    pip install python-dotenv
     pip install networkx
     pip install matplotlib
     ```
