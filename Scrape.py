@@ -11,7 +11,8 @@ def scrape_classes():
     df = pd.DataFrame(columns=['Campus','Year','Season','Department','Course code','Name','Credits','Pre-reqs','Co-reqs','Restrictions','Pre-req string','Description','URL'])
 
     browser = webdriver.Chrome()
-    browser.get("https://courses.students.ubc.ca/cs/courseschedule")
+    browser.get("https://courses.students.ubc.ca/cs/courseschedule")# Must be on UBC network to access this link or login with to UBC account
+   
     browser.find_element(By.XPATH,"//button[contains(text(),'Campus')]").click()
     time.sleep(1)
     elem_campuses = browser.find_elements(By.XPATH,"//ul[@class='dropdown-menu']//descendant::a[contains(@title,'UBC')]")
